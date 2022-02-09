@@ -54,3 +54,33 @@ db.movies.updateOne({title:"Pulp Fiction"},{$set:{"actors.2" :"Samuel L. Jackson
 ANS:
 db.movies.deleteOne({title:"Pee Wee Herman's Big Adventure"})
 db.movies.deleteOne({title:"Avatar"})
+
+5.Relationships
+
+ANS:
+db.users.insertOne({username:'GoodGuyGreg',first_name:'GoodGuy',last_name:'Greg'})
+db.users.insertOne({username:'ScumbagSteve',fullname:{first:'Scumbag',last:'Steve'}})
+db.posts.insertOne({username:"GoodGuyGreg",title:"Passes out at party",body:"Wakes up early and cleans house"})
+db.posts.insertOne({username : "GoodGuyGreg", title :" Steals your identity", body :" Raises your credit score"})
+db.posts.insertOne({username : "GoodGuyGreg", title :" Reports a bug in your code", body : "Sends you a Pull Request"}
+db.posts.insertOne({username : "GoodGuyGreg", title :" Reports a bug in your code", body : "Sends you a Pull Request"}
+db.posts.insertOne({username : "ScumbagSteve", title :" Borrows something", body : "Sells it"})
+db.posts.insertOne({username : "ScumbagSteve", title :" Borrows something", body : "Sells it"})
+db.posts.insertOne({username : "ScumbagSteve", title :" Forks your repo on github", body : "Sets to private"})
+db.comments.insertOne({username:'GoodGuyGreg',comment:'Hope you got a good deal!',post: ObjectId("6203b9fb6e07c9c44658a3a6")})
+db.comments.insertOne({username:'GoodGuyGreg',comment:"What's mine is yours!",post: ObjectId("6203ba066e07c9c44658a3a7")})
+db.comments.insertOne({username:'GoodGuyGreg',comment:"Don't violate the licensing agreement!",post:ObjectId("6203ba146e07c9c44658a3a8")})
+db.comments.insertOne({username:'ScumbagSteve',comment:"it still isn't clean",post:ObjectId("6203b80d6e07c9c44658a3a3")})
+db.comments.insertOne({username:'ScumbagSteve',comment:'Denied your PR cause i found a hack',post: ObjectId("6203b9ef6e07c9c44658a3a5")})
+
+6.Querying related collections
+
+db.users.find()
+db.posts.find()
+db.posts.find({username:'GoodGuyGreg'})
+db.posts.find({username:'ScumbagSteve'})
+db.comments.find()
+db.comments.find({username:'GoodGuyGreg'})
+db.comments.find({username:'ScumbagSteve'})
+db.comments.find({posts:ObjectId("6203be136e07c9c44658a3ad")})
+
