@@ -84,3 +84,9 @@ db.comments.find({username:'GoodGuyGreg'})
 db.comments.find({username:'ScumbagSteve'})
 db.comments.find({posts:ObjectId("6203be136e07c9c44658a3ad")})
 
+//TEXT search
+db.movies.find({synopsis:{$regex:'Bilbo'}})
+db.movies.find({synopsis:{$regex:'Gandalf'}})
+db.movies.find({$and:[{synopsis:{$regex:'Bilbo'}},{synopsis:{$not:{$regex:'Gandalf'}}}]})
+db.movies.find({$or:[{synopsis:{$regex:'dwarves'}},{synopsis:{$regex:'hobbit'}}]})
+db.movies.find({$and:[{synopsis:{$regex:'gold'}},{synopsis:{$regex:'dragon'}}]})
