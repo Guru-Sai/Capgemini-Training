@@ -25,15 +25,6 @@ db.addresses.find({'grades.score':{$gt:90}})
 9. Write a MongoDB query to find the restaurants that achieved a score, more than 80 but less than 100.
 db.addresses.find({$and:[{'grades.score':{$gt:80}},{'grades.score':{$lt:100}}]})
 
-10. Write a MongoDB query to find the restaurants which locate in latitude value less than -95.754168.
-
-
-11. Write a MongoDB query to find the restaurants that do not prepare any cuisine of 'American' and their grade score more than 70 and latitude less than -65.754168.
-
-
-12. Write a MongoDB query to find the restaurants which do not prepare any cuisine of 'American' and achieved a score more than 70 and located in the longitude less than -65.754168.
-
-
 13. Write a MongoDB query to find the restaurants which do not prepare any cuisine of 'American ' and achieved a grade point 'A' not belongs to the borough Brooklyn. The document must be displayed according to the cuisine in descending order.
 db.addresses.find({$and:[{cuisine:{$ne:'American'}},{'grades.grade':'A'},{borough:{$ne:'Brooklyn'}}]}).sort({cuisine:-1})
 
