@@ -1,0 +1,56 @@
+1. Create a directory ‘project_dir’ & cd to ‘project_dir’.
+ANS: mkdir project_dir , cd project_dir
+
+2. Initialize git version database. (git init)
+ANS: git init
+
+3. Create a new file index.html.
+ANS: touch index.html
+
+4. Check the git status. You should find index.html as untracked file.
+ANS: git status
+
+5. Stage the index.html file.
+ANS: git add index.html
+
+6. Commit index.html
+ANS: git commit -m 'added index.html'
+
+7. Make few changes in index.html & create a new file info.txt file.
+ANS: touch info.txt
+
+8. Check git status. You should find index.html & info.txt as untracked files.
+ANS: git status 
+
+9. Configure GIT to ignore all txt files.
+ANS: touch .gitignore (in that add *.txt to ignore all txt files)
+
+10. Again check the git status. You should find only index.html as untracked file.
+ANS: git status
+11. State & commit index.html
+ANS: git add . , git commit -m 'first commit in index.html'
+
+12. Log all your comments so far.
+ANS: git log
+
+13. Make some changes in index.html.
+
+14. Revert the change made in the previous step using git command.
+ANS: git checkout --index.html
+
+15. Again change index.html.
+
+16. Stage index.html
+ANS: git add index.html
+
+17. Revert back the last stage.
+ANS: git checkout --index.html
+
+18. Rename ‘add’ command to ‘my-add’.
+ANS:git config alias.my_add add
+
+19. Using my_add command Stage index.html again & commit the changes.
+ANS: git my_add, git commit -m 'second commit in index.html'
+
+20. Revert the last commit.
+ANS: git revert <commit id from log>
